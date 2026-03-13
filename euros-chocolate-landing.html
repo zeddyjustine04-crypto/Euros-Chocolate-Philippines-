@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Euros Chocolate PH — Ang Chocolate na Nagpaparamdam</title>
+
+<!-- ============================================
+     META PIXEL — ID: 1248587937448692
+     ============================================ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1248587937448692');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1248587937448692&ev=PageView&noscript=1"
+/></noscript>
+<!-- END META PIXEL -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --rose:       #C9485B;
+  --rose-deep:  #8B1A2B;
+  --rose-soft:  #E8A0AA;
+  --gold:       #BFA06A;
+  --gold-light: #D4B97E;
+  --cream:      #FDF6EE;
+  --dark:       #1A0A0E;
+  --choc:       #2E1018;
+  --text:       #3A1520;
+  --muted:      rgba(58,21,32,0.55);
+  --white:      #FFFAF5;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ── CURSOR ── */
+.cur,.cur-r{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+.cur{width:10px;height:10px;background:var(--rose);transition:width .15s,height .15s,background .15s;}
+.cur-r{width:34px;height:34px;border:1px solid var(--rose);opacity:.4;transition:width .25s,height .25s;}
+@media(max-width:600px){.cur,.cur-r{display:none;}}
+
+/* ── PARTICLES CANVAS ── */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.6;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,box-shadow .4s;
+}
+nav.scrolled{
+  background:rgba(253,246,238,.92);
+  backdrop-filter:blur(16px);
+  box-shadow:0 1px 0 rgba(201,72,91,.08);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:600;
+  color:var(--rose-deep);letter-spacing:.05em;
+}
+.nav-cta{
+  background:var(--rose);color:#fff;
+  font-size:13px;font-weight:500;
+  padding:10px 22px;border-radius:100px;
+  text-decoration:none;letter-spacing:.04em;
+  transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 4px 16px rgba(201,72,91,.3);
+}
+.nav-cta:hover{background:var(--rose-deep);transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,72,91,.4);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:120px 24px 80px;
+  position:relative;overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% -10%, rgba(201,72,91,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 10% 80%, rgba(191,160,106,.1) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 90% 70%, rgba(201,72,91,.07) 0%, transparent 60%),
+    var(--cream);
+  z-index:0;
+}
+
+/* Petal shapes */
+.petal{
+  position:absolute;
+  border-radius:50% 0 50% 0;
+  opacity:.06;
+  animation:petalFloat linear infinite;
+  pointer-events:none;
+}
+@keyframes petalFloat{
+  0%{transform:translateY(110vh) rotate(0deg) scale(.8);}
+  100%{transform:translateY(-10vh) rotate(360deg) scale(1.1);}
+}
+
+.hero-content{position:relative;z-index:1;max-width:760px;}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--rose);font-weight:500;
+  margin-bottom:28px;
+  opacity:0;animation:fadeUp .8s ease .1s forwards;
+}
+.hero-tag::before,.hero-tag::after{content:'';width:28px;height:1px;background:var(--rose);opacity:.5;}
+
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,9vw,96px);
+  font-weight:300;line-height:1.05;
+  color:var(--dark);
+  margin-bottom:8px;
+  opacity:0;animation:fadeUp .9s ease .25s forwards;
+  letter-spacing:-.01em;
+}
+.hero h1 strong{
+  font-weight:600;
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose),var(--rose-soft));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:block;
+  font-style:italic;
+}
+
+.hero-divider{
+  width:60px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--rose),transparent);
+  margin:24px auto;
+  opacity:0;animation:fadeUp .8s ease .4s forwards;
+}
+
+.hero-sub{
+  font-size:clamp(15px,2vw,18px);
+  color:var(--muted);
+  line-height:1.8;
+  max-width:520px;margin:0 auto 44px;
+  font-weight:300;
+  opacity:0;animation:fadeUp .9s ease .5s forwards;
+}
+
+.hero-ctas{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .9s ease .65s forwards;
+}
+
+.btn-rose{
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose));
+  color:#fff;
+  font-family:'Jost',sans-serif;font-weight:500;font-size:15px;
+  padding:16px 36px;border-radius:100px;
+  text-decoration:none;letter-spacing:.04em;
+  transition:transform .25s,box-shadow .25s;
+  box-shadow:0 8px 32px rgba(201,72,91,.35);
+}
+.btn-rose:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 40px rgba(201,72,91,.45);}
+
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;
+  color:var(--rose-deep);
+  font-family:'Jost',sans-serif;font-weight:400;font-size:14px;
+  padding:16px 28px;border-radius:100px;
+  text-decoration:none;letter-spacing:.03em;
+  border:1px solid rgba(201,72,91,.25);
+  transition:all .2s;
+}
+.btn-ghost:hover{background:rgba(201,72,91,.05);border-color:rgba(201,72,91,.5);}
+
+.local-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(191,160,106,.12);border:1px solid rgba(191,160,106,.3);
+  border-radius:100px;padding:8px 18px;
+  font-size:12px;color:var(--gold);
+  margin-top:28px;
+  opacity:0;animation:fadeUp .9s ease .8s forwards;
+  letter-spacing:.05em;
+}
+.local-badge strong{color:#8B6914;font-weight:600;}
+
+/* hero proof */
+.hero-proof{
+  display:flex;gap:40px;justify-content:center;flex-wrap:wrap;
+  margin-top:64px;padding-top:48px;
+  border-top:1px solid rgba(201,72,91,.1);
+  position:relative;z-index:1;
+  opacity:0;animation:fadeUp .9s ease 1s forwards;
+}
+.proof-item{text-align:center;}
+.proof-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:600;
+  color:var(--rose-deep);display:block;
+}
+.proof-lbl{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+
+/* ── EMOTION STRIP ── */
+.emotion-strip{
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose),#D45C6B);
+  padding:48px 24px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.emotion-strip::before{
+  content:'"';
+  position:absolute;top:-20px;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:200px;color:rgba(255,255,255,.06);
+  line-height:1;pointer-events:none;
+}
+.emotion-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,4vw,38px);
+  font-weight:300;font-style:italic;
+  color:#fff;line-height:1.5;
+  max-width:700px;margin:0 auto;
+  position:relative;z-index:1;
+}
+.emotion-author{
+  display:block;margin-top:16px;
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  font-family:'Jost',sans-serif;font-weight:300;
+}
+
+/* ── SECTION BASE ── */
+.section{padding:100px 24px;max-width:1100px;margin:0 auto;}
+.sec-tag{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--rose);font-weight:500;display:block;margin-bottom:14px;}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,5vw,54px);
+  font-weight:300;line-height:1.15;color:var(--dark);
+}
+.sec-title em{font-style:italic;color:var(--rose);}
+.sec-title strong{font-weight:600;}
+.sec-header{text-align:center;margin-bottom:64px;}
+
+/* ── STORY SECTION ── */
+.story-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+}
+@media(max-width:768px){.story-grid{grid-template-columns:1fr;gap:40px;}}
+
+.story-visual{
+  position:relative;
+}
+.story-card{
+  background:linear-gradient(135deg,var(--rose-deep),#6B1020);
+  border-radius:32px;padding:60px 48px;
+  color:#fff;position:relative;overflow:hidden;
+}
+.story-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 80% at 20% 20%,rgba(255,255,255,.06),transparent);
+}
+.story-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;font-weight:300;font-style:italic;
+  line-height:1.1;margin-bottom:20px;position:relative;z-index:1;
+}
+.story-card-sub{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;font-weight:300;position:relative;z-index:1;}
+
+.story-float{
+  position:absolute;bottom:-20px;right:-20px;
+  background:var(--gold);
+  border-radius:20px;
+  padding:16px 20px;
+  font-size:12px;font-weight:500;
+  color:var(--dark);
+  box-shadow:0 8px 32px rgba(191,160,106,.4);
+  letter-spacing:.04em;
+  z-index:2;
+}
+.story-float span{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--rose-deep);}
+
+.story-text .sec-tag{text-align:left;}
+.story-text .sec-title{text-align:left;margin-bottom:24px;}
+.story-body{font-size:16px;color:var(--muted);line-height:1.85;font-weight:300;margin-bottom:32px;}
+.story-points{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:36px;}
+.story-points li{
+  display:flex;align-items:flex-start;gap:14px;
+  font-size:14px;color:var(--text);line-height:1.6;
+}
+.story-points li::before{
+  content:'✦';color:var(--rose);font-size:10px;margin-top:4px;flex-shrink:0;
+}
+
+/* ── PRODUCTS ── */
+.products-bg{background:var(--white);padding:100px 0;}
+.products-inner{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.prod-card{
+  background:#fff;
+  border:1px solid rgba(201,72,91,.1);
+  border-radius:28px;
+  padding:36px 28px;
+  position:relative;overflow:hidden;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s,border-color .35s;
+  cursor:default;
+}
+.prod-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,72,91,.04),transparent);
+  opacity:0;transition:opacity .3s;border-radius:28px;
+}
+.prod-card:hover{
+  transform:translateY(-8px) scale(1.01);
+  box-shadow:0 24px 60px rgba(201,72,91,.15);
+  border-color:rgba(201,72,91,.25);
+}
+.prod-card:hover::after{opacity:1;}
+
+.prod-card.hero-prod{
+  border-color:rgba(201,72,91,.3);
+  background:linear-gradient(145deg,#fff7f8,#fff);
+}
+.prod-ribbon{
+  position:absolute;top:18px;right:-8px;
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose));
+  color:#fff;font-size:10px;font-weight:600;letter-spacing:.1em;
+  padding:5px 16px 5px 12px;border-radius:4px 0 0 4px;
+  text-transform:uppercase;
+}
+
+.prod-icon{font-size:40px;display:block;margin-bottom:20px;line-height:1;}
+.prod-cat{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);margin-bottom:8px;display:block;font-weight:500;}
+.prod-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--dark);margin-bottom:10px;}
+.prod-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.prod-price{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;}
+.prod-price-now{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--rose-deep);}
+.prod-price-was{font-size:14px;color:var(--muted);text-decoration:line-through;}
+.prod-discount{
+  display:inline-block;
+  background:rgba(201,72,91,.1);color:var(--rose);
+  font-size:11px;font-weight:600;letter-spacing:.06em;
+  padding:3px 10px;border-radius:100px;margin-bottom:20px;
+}
+.prod-perks{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:7px;}
+.prod-perks li{font-size:12px;color:rgba(58,21,32,.6);display:flex;align-items:center;gap:7px;}
+.prod-perks li::before{content:'·';color:var(--rose);font-size:16px;line-height:1;}
+
+.prod-btn{
+  display:block;text-align:center;
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose));
+  color:#fff;font-weight:500;font-size:13px;
+  padding:13px 20px;border-radius:100px;
+  text-decoration:none;letter-spacing:.05em;
+  transition:all .25s;
+  box-shadow:0 4px 16px rgba(201,72,91,.25);
+}
+.prod-btn:hover{transform:scale(1.03);box-shadow:0 6px 24px rgba(201,72,91,.4);}
+
+/* ── DESIRE SECTION ── */
+.desire-section{
+  background:linear-gradient(180deg,var(--cream) 0%,rgba(253,246,238,.5) 100%);
+  padding:100px 24px;
+}
+.desire-inner{max-width:1100px;margin:0 auto;}
+.desire-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-top:64px;
+}
+@media(max-width:768px){.desire-grid{grid-template-columns:1fr;}}
+
+.desire-card{
+  padding:40px 32px;
+  border-radius:24px;
+  position:relative;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.desire-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(201,72,91,.12);}
+
+.dc-1{background:linear-gradient(145deg,#fff,#FFF0F2);}
+.dc-2{background:linear-gradient(145deg,#fff,#FFF8F0);}
+.dc-3{background:linear-gradient(145deg,#fff,#FFF0F5);}
+
+.desire-icon{font-size:36px;display:block;margin-bottom:20px;}
+.desire-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:600;
+  color:var(--dark);margin-bottom:12px;line-height:1.2;
+}
+.desire-desc{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300;}
+
+/* ── MOMENT SECTION ── */
+.moment-section{padding:100px 24px;text-align:center;}
+.moment-inner{max-width:900px;margin:0 auto;}
+.moment-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,5vw,52px);
+  font-weight:300;font-style:italic;
+  line-height:1.3;color:var(--dark);
+  margin-bottom:24px;
+}
+.moment-tagline strong{font-weight:600;color:var(--rose);}
+.moment-body{font-size:16px;color:var(--muted);line-height:1.85;max-width:580px;margin:0 auto 48px;font-weight:300;}
+
+/* Mood pills */
+.mood-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
+.pill{
+  padding:10px 20px;border-radius:100px;
+  font-size:13px;font-weight:400;letter-spacing:.03em;
+  border:1px solid;transition:all .2s;
+}
+.pill-rose{background:rgba(201,72,91,.08);border-color:rgba(201,72,91,.2);color:var(--rose-deep);}
+.pill-gold{background:rgba(191,160,106,.1);border-color:rgba(191,160,106,.25);color:#6B4F10;}
+.pill-rose:hover,.pill-gold:hover{transform:scale(1.05);}
+
+/* ── TESTIMONIALS ── */
+.testi-section{
+  background:linear-gradient(180deg,var(--white) 0%,var(--cream) 100%);
+  padding:100px 24px;
+}
+.testi-inner{max-width:1100px;margin:0 auto;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+
+.testi-card{
+  background:#fff;
+  border:1px solid rgba(201,72,91,.08);
+  border-radius:24px;padding:32px;
+  position:relative;
+  transition:transform .3s,box-shadow .3s;
+}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(201,72,91,.1);}
+.testi-card::before{
+  content:'\201C';
+  position:absolute;top:16px;right:24px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px;color:rgba(201,72,91,.07);
+  line-height:1;
+}
+.testi-stars{color:var(--rose);font-size:14px;letter-spacing:3px;margin-bottom:16px;}
+.testi-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;font-style:italic;font-weight:300;
+  color:var(--text);line-height:1.75;
+  margin-bottom:20px;
+}
+.testi-name{font-size:13px;font-weight:500;color:var(--rose-deep);}
+.testi-detail{font-size:11px;color:var(--muted);letter-spacing:.05em;margin-top:2px;}
+
+/* ── HOW ── */
+.how-section{padding:100px 24px;background:var(--cream);}
+.how-inner{max-width:1000px;margin:0 auto;}
+.how-steps{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;margin-top:64px;position:relative;
+}
+@media(max-width:768px){.how-steps{grid-template-columns:1fr;gap:32px;}}
+.how-steps::before{
+  content:'';
+  position:absolute;top:36px;left:16.6%;right:16.6%;
+  height:1px;background:linear-gradient(90deg,transparent,rgba(201,72,91,.2),rgba(201,72,91,.2),transparent);
+}
+@media(max-width:768px){.how-steps::before{display:none;}}
+
+.how-step{text-align:center;padding:0 32px;position:relative;}
+.how-num{
+  width:72px;height:72px;
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose));
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:600;color:#fff;
+  position:relative;z-index:1;
+  box-shadow:0 8px 24px rgba(201,72,91,.3);
+}
+.how-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--dark);margin-bottom:10px;}
+.how-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;}
+
+/* ── FINAL CTA ── */
+.final-section{
+  position:relative;overflow:hidden;
+  padding:120px 24px;
+  background:linear-gradient(145deg,var(--rose-deep) 0%,#6B1020 50%,var(--choc) 100%);
+  text-align:center;
+}
+.final-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 30%,rgba(255,255,255,.05),transparent);
+}
+.final-content{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.final-tag{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px;display:block;font-family:'Jost',sans-serif;}
+.final-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,7vw,72px);
+  font-weight:300;font-style:italic;
+  color:#fff;line-height:1.1;margin-bottom:12px;
+}
+.final-h strong{font-weight:600;display:block;}
+.final-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:44px;font-weight:300;max-width:500px;margin-left:auto;margin-right:auto;}
+.btn-cream{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--cream);color:var(--rose-deep);
+  font-family:'Jost',sans-serif;font-weight:600;font-size:15px;
+  padding:18px 44px;border-radius:100px;text-decoration:none;letter-spacing:.04em;
+  transition:all .25s;
+  box-shadow:0 8px 32px rgba(0,0,0,.25);
+}
+.btn-cream:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 40px rgba(0,0,0,.35);}
+.final-guarantee{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:24px;font-size:13px;color:rgba(255,255,255,.45);
+}
+
+/* floating hearts */
+.heart{
+  position:absolute;pointer-events:none;
+  font-size:20px;opacity:0;
+  animation:heartRise 4s ease-in infinite;
+}
+@keyframes heartRise{
+  0%{transform:translateY(0) scale(.5);opacity:.7;}
+  80%{opacity:.4;}
+  100%{transform:translateY(-80vh) scale(1);opacity:0;}
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--choc);
+  padding:40px 24px;
+  text-align:center;
+}
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:600;color:rgba(255,255,255,.6);
+  letter-spacing:.05em;margin-bottom:16px;
+}
+footer p{font-size:12px;color:rgba(255,255,255,.25);line-height:1.9;}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;}
+footer a:hover{color:var(--rose-soft);}
+.footer-socials{display:flex;gap:16px;justify-content:center;margin-bottom:20px;}
+.soc-pill{
+  padding:7px 16px;border-radius:100px;
+  border:1px solid rgba(255,255,255,.1);
+  font-size:12px;color:rgba(255,255,255,.4);
+  text-decoration:none;transition:all .2s;letter-spacing:.04em;
+}
+.soc-pill:hover{border-color:var(--rose);color:var(--rose-soft);}
+
+/* ── STICKY ── */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;z-index:90;
+  background:rgba(253,246,238,.96);backdrop-filter:blur(20px);
+  border-top:1px solid rgba(201,72,91,.12);
+  padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  transform:translateY(100%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.sticky.show{transform:translateY(0);}
+.sticky-msg{font-size:14px;color:var(--text);}
+.sticky-msg strong{color:var(--rose-deep);}
+.sticky-btn{
+  background:linear-gradient(135deg,var(--rose-deep),var(--rose));
+  color:#fff;font-weight:500;font-size:13px;
+  padding:10px 24px;border-radius:100px;
+  text-decoration:none;white-space:nowrap;
+  box-shadow:0 4px 16px rgba(201,72,91,.3);
+  transition:all .2s;
+}
+.sticky-btn:hover{transform:scale(1.03);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+.reveal-d3{transition-delay:.3s;}
+
+@media(max-width:600px){
+  nav{padding:16px 20px;}
+  .hero-ctas{flex-direction:column;align-items:center;}
+  .btn-rose,.btn-ghost{width:100%;max-width:300px;justify-content:center;}
+  .how-steps{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="cur" id="c"></div>
+<div class="cur-r" id="cr"></div>
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">Euros Chocolate PH</div>
+  <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+     class="nav-cta"
+     onclick="px('nav_cta')">Bilhin Na 🍫</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- petals -->
+  <div class="petal" style="width:60px;height:80px;background:var(--rose);left:8%;animation-duration:12s;animation-delay:0s;"></div>
+  <div class="petal" style="width:40px;height:55px;background:var(--rose-soft);left:22%;animation-duration:16s;animation-delay:-4s;"></div>
+  <div class="petal" style="width:50px;height:70px;background:var(--gold);right:15%;animation-duration:14s;animation-delay:-7s;"></div>
+  <div class="petal" style="width:35px;height:45px;background:var(--rose);right:30%;animation-duration:18s;animation-delay:-2s;"></div>
+  <div class="petal" style="width:55px;height:75px;background:var(--rose-soft);left:50%;animation-duration:13s;animation-delay:-9s;"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">🇵🇭 Gawa Para Sa Inyo</div>
+    <h1>
+      Ang Chocolate na
+      <strong>Nagpaparamdam</strong>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">
+      Hindi lang ito tsokolate. Ito ay isang karanasan — isang sandali ng pagmamahal, 
+      pagnanasa, at koneksyon na dinisenyo para sa inyo ng dalawa.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+         class="btn-rose"
+         onclick="px('hero_main')">
+        Subukan Na Ngayon ✦
+      </a>
+      <a href="#products" class="btn-ghost">Tingnan ang Koleksyon ↓</a>
+    </div>
+    <div class="local-badge">
+      🍫 <strong>#1 Chocolate Aphrodisiac Brand</strong> sa Pilipinas
+    </div>
+  </div>
+
+  <div class="hero-proof">
+    <div class="proof-item">
+      <span class="proof-num">PH</span>
+      <span class="proof-lbl">Local Brand</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-num">100%</span>
+      <span class="proof-lbl">Natural Ingredients</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-num">3</span>
+      <span class="proof-lbl">Flavors Para sa Inyo</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-num">Fast</span>
+      <span class="proof-lbl">Delivery Nationwide</span>
+    </div>
+  </div>
+</section>
+
+<!-- EMOTION STRIP -->
+<div class="emotion-strip reveal">
+  <p class="emotion-quote">
+    "Ang tunay na koneksyon ay nagsisimula sa isang simpleng sandali — 
+    isang kilos, isang ngiti, isang piraso ng tsokolate."
+    <span class="emotion-author">— Para sa mga nagmamahal</span>
+  </p>
+</div>
+
+<!-- STORY -->
+<section class="section">
+  <div class="story-grid">
+    <div class="story-visual reveal">
+      <div class="story-card">
+        <div class="story-card-title">
+          Mula sa<br/>Puso ng<br/>Pilipinas
+        </div>
+        <p class="story-card-sub">
+          Euros Chocolate ay hindi lang produkto — ito ay isang pagdiriwang ng pagmamahal, 
+          nilikhang para sa mga Pilipinong nais palakasin ang kanilang relasyon.
+        </p>
+        <div class="story-float">
+          🇵🇭 Proudly Filipino
+          <span>Est. PH</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-text reveal reveal-d2">
+      <span class="sec-tag">Ang Aming Kwento</span>
+      <h2 class="sec-title">
+        Dinisenyo para<br/>sa <em>Inyong Gabi</em>
+      </h2>
+      <p class="story-body">
+        Bawat piraso ng Euros Chocolate ay ginawa nang may layunin — 
+        palakasin ang pagnanasa, ibalik ang senyales ng pagmamahal, 
+        at gawing espesyal ang bawat sandali ng pagiging magkasama.
+      </p>
+      <ul class="story-points">
+        <li>Premium na mga sangkap na nagpapalakas ng pagnanasa nang natural</li>
+        <li>Para sa mga mag-asawa at magnobyo na nais magpalapit</li>
+        <li>Masarap, ligtas, at espesyal para sa bawat okasyon</li>
+        <li>Available nationwide — mabilis na delivery sa buong Pilipinas</li>
+      </ul>
+      <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+         class="btn-rose"
+         onclick="px('story_cta')">
+        I-order Na ✦
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div class="products-bg" id="products">
+  <div class="products-inner">
+    <div class="sec-header reveal">
+      <span class="sec-tag">Ang Koleksyon</span>
+      <h2 class="sec-title">
+        Piliin ang <em>Inyong</em><br/>
+        <strong>Karanasan</strong>
+      </h2>
+    </div>
+    <div class="products-grid">
+
+      <!-- Dark -->
+      <div class="prod-card hero-prod reveal reveal-d1">
+        <div class="prod-ribbon">Bestseller</div>
+        <span class="prod-icon">🍫</span>
+        <span class="prod-cat">Dark Chocolate</span>
+        <div class="prod-name">Euros Dark</div>
+        <p class="prod-desc">Ang klasiko at paborito — malalim, mayaman, at puno ng pagnanasa. Para sa gabi na hindi malilimutan.</p>
+        <div class="prod-price">
+          <span class="prod-price-now">₱815</span>
+          <span class="prod-price-was">₱905</span>
+        </div>
+        <div class="prod-discount">10% OFF</div>
+        <ul class="prod-perks">
+          <li>Nagpapalakas ng pagnanasa</li>
+          <li>Nagpapaganda ng mood</li>
+          <li>Premium dark chocolate flavor</li>
+        </ul>
+        <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+           class="prod-btn"
+           onclick="px('dark_choc')">
+          I-order ang Dark Chocolate →
+        </a>
+      </div>
+
+      <!-- Strawberry -->
+      <div class="prod-card reveal reveal-d2">
+        <span class="prod-icon">🍓</span>
+        <span class="prod-cat">Strawberry Chocolate</span>
+        <div class="prod-name">Euros Strawberry</div>
+        <p class="prod-desc">Matamis, malambot, at puno ng romantikong enerhiya. Para sa mga gustong magdagdag ng tamis sa kanilang relasyon.</p>
+        <div class="prod-price">
+          <span class="prod-price-now">₱855</span>
+          <span class="prod-price-was">₱950</span>
+        </div>
+        <div class="prod-discount">15% OFF</div>
+        <ul class="prod-perks">
+          <li>Matamis at romantiko</li>
+          <li>Nagpapalabas ng pagmamahal</li>
+          <li>Strawberry + aphrodisiac blend</li>
+        </ul>
+        <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+           class="prod-btn"
+           onclick="px('strawberry_choc')">
+          I-order ang Strawberry →
+        </a>
+      </div>
+
+      <!-- Combo -->
+      <div class="prod-card reveal reveal-d2">
+        <div class="prod-ribbon">Best Value</div>
+        <span class="prod-icon">💝</span>
+        <span class="prod-cat">Combo Pack</span>
+        <div class="prod-name">Dark + Strawberry</div>
+        <p class="prod-desc">Ang pinakamahusay na regalo para sa inyong relasyon. Dalawang lasa, dalawang karanasan — para sa bawat gabi.</p>
+        <div class="prod-price">
+          <span class="prod-price-now">₱1,575</span>
+          <span class="prod-price-was">₱1,852</span>
+        </div>
+        <div class="prod-discount">Makatipid ng ₱277</div>
+        <ul class="prod-perks">
+          <li>Dalawang flavors sa isang order</li>
+          <li>Pinakamagandang regalo</li>
+          <li>Free nationwide delivery</li>
+        </ul>
+        <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+           class="prod-btn"
+           onclick="px('combo_pack')">
+          I-order ang Combo →
+        </a>
+      </div>
+
+      <!-- Sparx -->
+      <div class="prod-card reveal reveal-d3">
+        <span class="prod-icon">⚡</span>
+        <span class="prod-cat">Entry Level</span>
+        <div class="prod-name">Sparx Chocolate</div>
+        <p class="prod-desc">Ang pinaka-abot-kayang paraan para subukan ang Euros. Perpekto para sa mga gustong magsimula ng kanilang karanasan.</p>
+        <div class="prod-price">
+          <span class="prod-price-now">₱350</span>
+          <span class="prod-price-was">₱389</span>
+        </div>
+        <div class="prod-discount">10% OFF</div>
+        <ul class="prod-perks">
+          <li>Abot-kaya at masustansya</li>
+          <li>Perpekto para subukan muna</li>
+          <li>Mabilis ma-deliver</li>
+        </ul>
+        <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+           class="prod-btn"
+           onclick="px('sparx_choc')">
+          I-order ang Sparx →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- DESIRE -->
+<div class="desire-section">
+  <div class="desire-inner">
+    <div class="sec-header reveal">
+      <span class="sec-tag">Bakit Euros</span>
+      <h2 class="sec-title">
+        Para sa mga <em>Sandali</em><br/>
+        na Hindi Malilimutan
+      </h2>
+    </div>
+    <div class="desire-grid">
+      <div class="desire-card dc-1 reveal reveal-d1">
+        <span class="desire-icon">💕</span>
+        <div class="desire-title">Nagpapalabas ng Pagnanasa</div>
+        <p class="desire-desc">Ang bawat piraso ay puno ng natural na mga sangkap na nagpapalakas ng pagnanasa at nagpapalabas ng romantikong damdamin sa inyo ng dalawa.</p>
+      </div>
+      <div class="desire-card dc-2 reveal reveal-d2">
+        <span class="desire-icon">🌹</span>
+        <div class="desire-title">Nagdadala ng Koneksyon</div>
+        <p class="desire-desc">Hindi lang ito pagkain — ito ay isang ritwal ng pagmamahal. Ang pagbabahagi ng Euros ay nagpapalapit sa inyo ng dalawa nang mas malalim kaysa dati.</p>
+      </div>
+      <div class="desire-card dc-3 reveal reveal-d3">
+        <span class="desire-icon">✨</span>
+        <div class="desire-title">Natural at Ligtas</div>
+        <p class="desire-desc">Walang harmful chemicals. Puro natural ingredients na matagal nang ginagamit para palakasin ang pagmamahal at pagnanasa — ngayon nasa tsokolate na.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOMENT -->
+<section class="moment-section">
+  <div class="moment-inner reveal">
+    <div class="mood-pills">
+      <span class="pill pill-rose">💑 Para sa Mag-asawa</span>
+      <span class="pill pill-rose">💘 Para sa Magnobyo</span>
+      <span class="pill pill-gold">🎁 Bilang Regalo</span>
+      <span class="pill pill-gold">🌙 Para sa Espesyal na Gabi</span>
+      <span class="pill pill-rose">💝 Valentines & Anniversaries</span>
+    </div>
+    <p class="moment-tagline">
+      Ang bawat relasyon ay may<br/>
+      <strong>mga sandaling nangangailangan</strong><br/>
+      ng kaunting tulong.
+    </p>
+    <p class="moment-body">
+      Minsan, ang pagnanasa ay kailangang pukawin. Ang koneksyon ay kailangang palakasin. 
+      At ang pagmamahal ay kailangang ipakita sa ibang paraan. 
+      Euros Chocolate — ang inyong lihim na sandata para sa bawat gabi.
+    </p>
+    <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+       class="btn-rose"
+       style="font-size:16px;padding:18px 44px;"
+       onclick="px('moment_cta')">
+      Simulan ang Inyong Karanasan ✦
+    </a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="testi-section">
+  <div class="testi-inner">
+    <div class="sec-header reveal">
+      <span class="sec-tag">Mga Kwento ng Pagmamahal</span>
+      <h2 class="sec-title">
+        Sinasabi ng <em>mga Couples</em>
+      </h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Hindi ko inakala na isang piraso ng tsokolate ang makapagbabago ng aming gabi. Napaka-effective! Kami ng aking asawa ay talagang nagulat sa resulta."</p>
+        <div class="testi-name">Maria C.</div>
+        <div class="testi-detail">Quezon City · Verified Purchase</div>
+      </div>
+      <div class="testi-card reveal reveal-d2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Binili ko ito bilang regalo sa aming anniversary. Best decision ever! Ang aming koneksyon ay mas malalim na ngayon. Sobrang rekumenda!"</p>
+        <div class="testi-name">Jomari R.</div>
+        <div class="testi-detail">Cebu City · Verified Purchase</div>
+      </div>
+      <div class="testi-card reveal reveal-d3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Ang Strawberry flavor ay ang paborito namin ng aking nobyo. Masarap at talagang ramdam ang effect. Bibilhin ulit kami nito para sa susunod naming date night!"</p>
+        <div class="testi-name">Andrea L.</div>
+        <div class="testi-detail">Manila · Verified Purchase</div>
+      </div>
+      <div class="testi-card reveal reveal-d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Nagpadala ako ng Combo Pack sa aking mahal na tao bilang sorpresa. Sinabi niya na ito ang pinaka-thoughtful na regalo na natanggap niya. Salamat Euros!"</p>
+        <div class="testi-name">Kevin M.</div>
+        <div class="testi-detail">Davao · Verified Purchase</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-section">
+  <div class="how-inner">
+    <div class="sec-header reveal">
+      <span class="sec-tag">Napakasimple</span>
+      <h2 class="sec-title">
+        Paano <em>Gumagana</em>
+      </h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal reveal-d1">
+        <div class="how-num">1</div>
+        <div class="how-title">Pumili ng Flavor</div>
+        <p class="how-desc">Piliin kung anong karanasan ang gusto ninyo — Dark para sa malalim na pagnanasa, Strawberry para sa matamis na romance, o Combo para sa lahat.</p>
+      </div>
+      <div class="how-step reveal reveal-d2">
+        <div class="how-num">2</div>
+        <div class="how-title">I-enjoy Nang Magkasama</div>
+        <p class="how-desc">Ibahagi ang isang piraso sa inyong mahal sa buhay. Hayaan ang mga natural na sangkap na gumawa ng kanilang trabaho — natural, masarap, at epektibo.</p>
+      </div>
+      <div class="how-step reveal reveal-d3">
+        <div class="how-num">3</div>
+        <div class="how-title">Maranasan ang Pagbabago</div>
+        <p class="how-desc">Damhin ang pagkakaiba sa inyong koneksyon. Mas malalim na pagnanasa, mas malakas na emosyon, mas espesyal na sandali — para sa inyong dalawa.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-section">
+  <!-- floating hearts -->
+  <span class="heart" style="left:10%;animation-delay:0s;">🌹</span>
+  <span class="heart" style="left:25%;animation-delay:1.5s;font-size:14px;">💕</span>
+  <span class="heart" style="left:50%;animation-delay:0.8s;font-size:24px;">🍫</span>
+  <span class="heart" style="left:70%;animation-delay:2.2s;font-size:16px;">💝</span>
+  <span class="heart" style="left:85%;animation-delay:1s;">🌸</span>
+
+  <div class="final-content reveal">
+    <span class="final-tag">Handa Na Ba Kayo?</span>
+    <h2 class="final-h">
+      Gawing Espesyal
+      <strong>ang Gabi Ninyo</strong>
+    </h2>
+    <p class="final-sub">
+      Ang isang piraso ng Euros Chocolate ay lahat na kailangan ninyo para simulan 
+      ang gabi na hindi malilimutan. I-order na ngayon — fast delivery sa buong Pilipinas.
+    </p>
+    <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+       class="btn-cream"
+       onclick="px('final_cta')">
+      I-order Na Ngayon 🍫
+    </a>
+    <div class="final-guarantee">
+      🛡️ Ligtas ang inyong order &nbsp;·&nbsp; Fast Delivery sa Buong Pilipinas
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Euros Chocolate PH</div>
+  <div class="footer-socials">
+    <a href="https://www.facebook.com/euroschocolateph" target="_blank" class="soc-pill">Facebook</a>
+    <a href="https://www.instagram.com/euroschocolateph/" target="_blank" class="soc-pill">Instagram</a>
+    <a href="https://www.tiktok.com/@euroschocolate" target="_blank" class="soc-pill">TikTok</a>
+  </div>
+  <p>
+    Ang page na ito ay naglalaman ng affiliate link. Kung bumili ka sa pamamagitan nito, 
+    maaari akong kumita ng komisyon nang walang dagdag na gastos sa inyo.
+  </p>
+  <p style="margin-top:8px;">
+    Produkto ng <a href="https://euroschocolate.com" target="_blank">Euros Chocolate PH</a> &nbsp;·&nbsp;
+    <a href="https://euroschocolate.com/pages/faqs" target="_blank">FAQs</a>
+  </p>
+  <p style="margin-top:8px;font-size:10px;opacity:.4;">
+    * These statements have not been evaluated by the FDA. 
+    This product is not intended to diagnose, treat, cure, or prevent any disease.
+  </p>
+</footer>
+
+<!-- STICKY -->
+<div class="sticky" id="sticky">
+  <div class="sticky-msg">
+    🍫 <strong>Euros Chocolate PH</strong> — I-order na ngayon at ma-deliver sa inyo agad!
+  </div>
+  <a href="https://euroschocolate.com?sca_ref=8050255.YvXEnOXUFDhML"
+     class="sticky-btn"
+     onclick="px('sticky_cta')">
+    Bilhin Na →
+  </a>
+</div>
+
+<script>
+// ── META PIXEL EVENTS ──
+window.addEventListener('load',()=>{
+  if(typeof fbq!=='undefined'){
+    fbq('track','ViewContent',{
+      content_name:'Euros Chocolate PH Landing Page',
+      content_category:'Chocolate Aphrodisiac',
+      content_ids:['euros-ph-affiliate'],
+      currency:'PHP'
+    });
+  }
+});
+function px(btn){
+  if(typeof fbq!=='undefined'){
+    fbq('track','InitiateCheckout',{
+      content_name:'Euros PH — '+btn,
+      content_category:'Affiliate Click',
+      currency:'PHP'
+    });
+  }
+}
+
+// ── CURSOR ──
+const c=document.getElementById('c'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.left=mx+'px';c.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{c.style.width='18px';c.style.height='18px';cr.style.width='48px';cr.style.height='48px';});
+  el.addEventListener('mouseleave',()=>{c.style.width='10px';c.style.height='10px';cr.style.width='34px';cr.style.height='34px';});
+});
+
+// ── PARTICLES ──
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+let W,H,pts=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+function Pt(){
+  this.x=Math.random()*W;this.y=Math.random()*H;
+  this.r=Math.random()*2+.5;
+  this.vx=(Math.random()-.5)*.3;this.vy=(Math.random()-.5)*.3;
+  this.a=Math.random();
+  this.col=Math.random()>.5?'201,72,91':'191,160,106';
+}
+for(let i=0;i<60;i++)pts.push(new Pt());
+function drawPts(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(${p.col},${p.a*.4})`;
+    ctx.fill();
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1;
+    if(p.y<0||p.y>H)p.vy*=-1;
+  });
+  // connect nearby
+  pts.forEach((a,i)=>{
+    pts.slice(i+1).forEach(b=>{
+      const d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<120){
+        ctx.beginPath();
+        ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle=`rgba(201,72,91,${.06*(1-d/120)})`;
+        ctx.lineWidth=.5;ctx.stroke();
+      }
+    });
+  });
+  requestAnimationFrame(drawPts);
+}
+drawPts();
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+  document.getElementById('sticky').classList.toggle('show',window.scrollY>window.innerHeight*.5);
+});
+
+// ── REVEAL ──
+const revs=document.querySelectorAll('.reveal');
+new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('on'),i*60);
+      // don't unobserve so re-entry works too
+    }
+  });
+},{threshold:.1}).observe
+// use forEach
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
+},{threshold:.1});
+revs.forEach(r=>io.observe(r));
+
+// ── COUNTER ANIMATION ──
+function animCount(el,target,suffix){
+  let n=0;const step=target/60;
+  const t=setInterval(()=>{
+    n=Math.min(n+step,target);
+    el.textContent=Math.round(n)+(suffix||'');
+    if(n>=target)clearInterval(t);
+  },16);
+}
+</script>
+</body>
+</html>
